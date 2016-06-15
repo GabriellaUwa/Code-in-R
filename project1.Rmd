@@ -1,0 +1,39 @@
+---
+title: "Butterfly"
+author: "Gabriella, Lulu, Omar"
+date: "2016 M05 27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+n<-10000 
+theta<-seq(0,25*pi,length.out = n) 
+r<- exp(cos(theta)) - 2*cos(theta*4) + (sin(theta/12))^5 
+
+
+x<- 2*r*cos(theta) 
+y<- 2*r*sin(theta) 
+plot(x,y,col="orchid2",type="l",lwd=2,xlab="",ylab="",axes=FALSE,asp=1)
+
+x<- 0.5*r*cos(theta + pi/2.2) + 0
+y<- 0.5*r*sin(theta + pi/2.2) + 5.5
+lines(x,y,col="chartreuse2",type="l",lwd=2,xlab="",ylab="")
+
+x<-0.75*r*cos(theta + pi/2.8) - 7
+y<-0.75*r*sin(theta + pi/2.8) - 2
+lines(x,y,col="navyblue",type="l",lwd=2,xlab="",ylab="")
+
+x<- 0.9*r*cos(theta + pi/1.9) + 9.7
+y<- 0.9*r*sin(theta + pi/1.9) - 1
+lines(x,y,col="deepskyblue1",type="l",lwd=2,xlab="",ylab="")
+
+```
+
+
+

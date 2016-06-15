@@ -1,0 +1,32 @@
+---
+title: "Galaxy"
+author: "Gabriella, Lulu, Omar"
+date: "2016 M05 27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+n<-2e4
+pitch<-12*pi/180
+theta<-seq(0,9*pi, len=n) 
+r<- exp(theta*tan(pitch))
+x<- r*cos(theta)
+y<- r*sin(theta)
+x<- r*cos(theta)
+y<- r*sin(theta)   
+plot(jitter(x,amount = 15),jitter(y,amount = 15),pch=".",
+col=rainbow(n),ylab="",xlab="",xlim=c(-250,250), ylim=c(-370,370),cex=1.5, axes = FALSE)
+x<- 2*r*cos(theta)
+y<- 2*r*sin(theta) 
+points(jitter(x,amount = 15),jitter(y,amount = 15),pch=".",
+col=rainbow(n),ylab="",xlab="",cex=1.5)
+
+
+```
+

@@ -6,6 +6,13 @@
    Analysis of Sorting Techniques
 
 **/
+
+/***
+Functions of Sorting Algorithms, with counts and swaps variables to analyze time complexity.
+Used arrays to store data and created files to show out put of diffeent number data sets.
+Data sets: Almost sorted 100 & 1000 elements. Unsorted (Random) 100 & 1000. Inversely Sorted(High-low) 100 & 1000
+***/
+
 #include <string>
 #include <iostream>
 #include <fstream>

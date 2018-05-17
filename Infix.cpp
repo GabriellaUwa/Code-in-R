@@ -1,8 +1,8 @@
 /*
     Gabriella Uwadiegwu
-    Project 4 CSC330
-    05/17/2017
-    Prof. Salvati
+    5/17/2017
+    
+    Main() performs infix operation.
 */
 #include <iostream>
 #include <stack>

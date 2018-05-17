@@ -1,12 +1,14 @@
 /***
  * Gabriella Uwadiegwu
+ * 05/11/2018
+ *  
+ * IT ISN'T IDEAL TO PUT DIFFERENT CLASSES THE SAME FILE... ESPECIALLY WITH JAVA
+ * THIS IS SOLELY DONE BASED ON THE PROJECT REQUIREMENTS. WILL UPDATE IN THE FUTURE.
  *
- * CS 313 Project
- *
- * Prof. Mahavadi
- *
- * 05/11/2018: Final Code/Draft
- *
+ * This is a GUI representation of a Graph
+ * User can create a graph and find its shortest path.
+ * Clone or copy-paste for a test ride!
+ * 
  * ***/
 
 import javafx.scene.canvas.GraphicsContext;
@@ -404,7 +406,9 @@ public class GGUwadiegwu extends Application {
                 numOfEdges--;
             }
         }
-
+        /*****
+         Gets the vertex of the coordinate in the GUI
+         ******/
         public T getCoordVertex(VCoord v){
 
             for(int i = 0; i <vertexCoord.length; i++){

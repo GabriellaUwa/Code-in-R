@@ -44,16 +44,12 @@ public class GGUwadiegwu extends Application {
     public void start(Stage stage) {
 
         HBox root = new HBox();
-
         StackPane background = new StackPane();
-
 
         Canvas canvas = new Canvas(850, 900);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-
-
+        
         ToggleGroup group = new ToggleGroup();
-
         Scene scene = new Scene(root, 1200, 900);
 
         RadioButton button1 = new RadioButton(" Add Vertex ");
@@ -73,13 +69,11 @@ public class GGUwadiegwu extends Application {
 
         Button btn3 = new Button();
         btn3.setText("Shortest Path");
-
-
+        
         background.setStyle("-fx-background-color: DARKCYAN");
 
         stage.setScene(scene);
         stage.setTitle("Matrix Graph GUI");
-
 
         final ListView listView = new ListView();
         listView.setPrefSize(350, 400);
@@ -103,7 +97,6 @@ public class GGUwadiegwu extends Application {
          * +
          * Other needed containers
          * **/
-
         Graph<String> graph = new Graph<>(10);
         VCoord[] vcoord = new VCoord[1];
         VCoord[] vertexCoords = new VCoord[20];
@@ -118,8 +111,6 @@ public class GGUwadiegwu extends Application {
                 button2.setSelected(false);
                 button3.setSelected(false);
                 button1.setSelected(false);
-
-
                try{
                    graph.addAllEdges();
                    gc.setLineWidth(0.5);
@@ -140,7 +131,7 @@ public class GGUwadiegwu extends Application {
                catch (Exception e){}
             }
         });
-
+        
         /****
          * Help Guide Button
          *****/
@@ -170,7 +161,6 @@ public class GGUwadiegwu extends Application {
                 alert.setHeaderText("Help Guide");
                 alert.setResizable(true);
                 alert.show();
-
             }
         });
 
@@ -222,7 +212,6 @@ public class GGUwadiegwu extends Application {
                     public void handle(MouseEvent e) {
 
                         if (button1.isSelected()) {
-
                             button2.setSelected(false);
                             button3.setSelected(false);
 
@@ -230,7 +219,7 @@ public class GGUwadiegwu extends Application {
                             int y = (int) e.getY();
                             gc.setFill(Color.BLACK);
                             gc.fillOval(x, y, 12, 12);
-
+                            
                             vcoord[0] = new VCoord(x, y);
                             for (int i = 0; i < vertexCoords.length; i++) {
                                 if (vertexCoords[i] == null) {
@@ -250,7 +239,6 @@ public class GGUwadiegwu extends Application {
 
                             button1.setSelected(false);
                             button3.setSelected(false);
-
                             try {
                                 VCoord one = temp.pop();
                                 VCoord two = temp.pop();
@@ -263,7 +251,6 @@ public class GGUwadiegwu extends Application {
                                 gc.fillText(Integer.toString(r), x_avg, y_avg);
 
                             }catch (Exception e1){}
-
                         }
                         if (button3.isSelected()) {
 
@@ -272,23 +259,18 @@ public class GGUwadiegwu extends Application {
 
                             int x = (int) e.getX();
                             int y = (int) e.getY();
-
                             vcoord[0] = new VCoord(x,y);
 
                             if(graph.getCoordIndex(vcoord[0]) != -1)
                                 temp.push(vcoord[0]);
                         }
-
-
                     }
                 });
-
         background.getChildren().add(canvas);
         root.getChildren().add(listView);
         root.getChildren().add(background);
         scene.setRoot(root);
         stage.show();
-
     }
 
     /***
@@ -302,7 +284,6 @@ public class GGUwadiegwu extends Application {
     /***
      * VCoord class to keep track of coordinates of vertices in the GUI
      * **/
-
     private class VCoord{
 
         final double x;
@@ -422,7 +403,6 @@ public class GGUwadiegwu extends Application {
         /*****
          Adds an edge to the graph
          ******/
-
         public void addEdge(T i, T j, int w) throws Exception {
 
             if (isVertex(i) && isVertex(j) && getIndex(i) != getIndex(j) && !isEdge(i,j)) {
@@ -436,7 +416,6 @@ public class GGUwadiegwu extends Application {
         /*****
          Adds all edge to vertices in the graph
          ******/
-
         public void addAllEdges() throws Exception {
 
             if(isEmpty())

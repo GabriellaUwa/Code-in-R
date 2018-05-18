@@ -21,7 +21,6 @@ void process_p();
 
 int main()
 {
-
     //This is to know the integers associated with the operators
     op_preference['/']=1;
     op_preference['*']=2;
@@ -49,7 +48,7 @@ int main()
             value as "whole" value
             **/
         if (isdigit(exp[i])){//if the character is a digit
-
+            
             if (checkDig==0){
                 int temp = (int)exp[i]-'0';//so values are read in characters and we would then have cast
                                                 //to int. e.g'0' is 48 in ASCII and 3 is 51 so casting 3 to int
@@ -63,7 +62,6 @@ int main()
                 operands.push(temp);//push the negative value which is now temp
                 checkDig=1;
             }
-
             else {
                     /**
                     So, this pushes a value with more than one digit into the operand stack
@@ -74,7 +72,6 @@ int main()
                     operands.push(temp); //the double digit or more value being pushed into the stack
             }
         }
-
         else {
 
             checkDig=0; //checkDig now becomes 0 since the next character read is an operator
@@ -108,7 +105,6 @@ int main()
                     operators.push(exp[i]);
                 }
             }
-
             //for a negative number, two cases are considered. e.g -4*(1+2) or 3+(-1*2)
             if (exp[i]=='-') {
                 if (last_val=='(' || last_val==':')//hence ':' to indicate the beginning of the expression
@@ -123,9 +119,7 @@ int main()
     while(!operators.empty()){
         process();
     }
-
     cout<<"Infix evaluation: "<<operands.top()<<"\n";
-
 return 0;
 }
 
@@ -137,37 +131,30 @@ void process()
 {
         int val1=0; int val2=0; char op; int flag=0;
 
-        if (!operands.empty())
-        {
+        if (!operands.empty()){
                 val1=operands.top();
                 operands.pop();
         }
-        if (!operands.empty())
-        {
+        if (!operands.empty()){
                 val2=operands.top();
                 operands.pop();
         }
-        if (!operators.empty())
-        {
+        if (!operators.empty()){
                 op=operators.top();
                 operators.pop();
         }
 
         //checks for Operators, evaluate operands and then pushes them to operand stack
-        if (op=='+')
-        {
+        if (op=='+'){
                 operands.push(val2+val1);
         }
-        else if (op=='-')
-        {
+        else if (op=='-'){
                 operands.push(val2-val1);
         }
-        else if (op=='*')
-        {
+        else if (op=='*'){
                 operands.push(val2*val1);
         }
-        else if (op=='/')
-        {
+        else if (op=='/'){
                 operands.push(val2/val1);
         }
 }

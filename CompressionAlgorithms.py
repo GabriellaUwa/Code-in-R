@@ -1,9 +1,6 @@
 """
-Author:       Gabriella Uwadiegwu (Redesigned/Refactored)
+Author:       Gabriella Uwadiegwu (Restructured/Refactored)
 Source:       rosettacode.org (For Algorithms)
-Course:       CS 323 - Design and Analysis of Algorithms, Term Project
-Instructor:   Prof. Teitelman
-Date:         August 5, 2018
 """
 
 from heapq import heappush, heappop, heapify
